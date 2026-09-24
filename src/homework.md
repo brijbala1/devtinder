@@ -10,3 +10,21 @@
 - what are dependencies
 - what is the use of "-g" while npm install
 - difference between caret and tilde(^ & ~)
+- how to ignore your node module
+- how to create a git ignore file 
+- difference between package.json and packagelock.json, and should you put packagelock.json on github
+
+
+- initialize git
+- .gitignore
+- create a remote repo on github
+- push all code to remote origin
+- play with route extensions ex. /hello , /, hello/2, /xyz
+- order of the routes matter a lot
+- Install postman app and make workspace collection > test api call
+- Write a logic to handle GET, POST, DELETE, PATCH API Call and test them on postman
+- Explore routing and use of ?, +, (), * in the routes
+- Use of regex in routes /a/, /.*fly$/
+- read more about regx and routing
+- Reading the query params in the routes 
+- Reading the dynamic routes 
