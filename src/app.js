@@ -2,27 +2,44 @@ const express= require("express");
 
 const app = express();
 
-// app.use('/route',rH,[rH2,rH3],rH4); //route in array nothing break over here or do not impact over here
+//GET  /User => It check all the app.xxx("matching route") function
+// app.use("/",(req,res)=>{
+//     // res.send("Handeling/ route");
+//     next();
+// });
 
-app.use("/user",
-    [(req,res,next)=>{
-//Route handler
-    // res.send("Route handler 1");
-    console.log("Handeling the route user");
-    next();
-},(req,res,next)=>{
-    
-    //  res.send("Route handler 2");
-    console.log("Handeling the route user2");
-     next();
-}],(req,res,next)=>{
-    //  res.send("Route handler 3");
-    console.log("Handeling the route user3");
-    next();
-},(req,res,next)=>{
-     res.send("Route handler 4");
-    console.log("Handeling the route user4");
-    // next();    //becouse it can't find route handler
+// app.use('/route',rH,[rH2,rH3],rH4); //route in array nothing break over here or do not impact over here
+// app.use("/user",
+//     (req,res,next)=>{
+// //Route handler
+//     // res.send("Route handler 2");
+//     // console.log("Handeling the route user");
+//     next();
+// }, (req,res,next)=>{
+// //Route handler
+//     // res.send("Route handler 2");
+//     // console.log("Handeling the route user");
+//     next();
+// },(req,res,next)=>{
+//     res.send("2nd route Handler");
+// });
+// app.use("/user",
+//     (req,res,next)=>{
+// //Route handler
+//     // res.send("Route handler 1");
+//     console.log("Handeling the route user");
+//     next();
+// });
+
+
+app.get("/admin/getAllData",(req,res)=>{
+    //Logic of fetching all data
+    res.send("All data sent");
+});
+
+app.get("/admin/deleteUser",(req,res)=>{
+    //Logic to delete all User
+    res.send("Deleted a user");
 });
 
 app.listen(3000,()=>{
