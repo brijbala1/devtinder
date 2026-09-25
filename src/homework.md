@@ -27,4 +27,4 @@
 - Use of regex in routes /a/, /.*fly$/
 - read more about regx and routing
 - Reading the query params in the routes 
-- Reading the dynamic routes 
+- Reading the dynamic routes
