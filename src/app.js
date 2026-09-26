@@ -1,13 +1,44 @@
 const express= require("express");
-
 const app = express();
+const {adminAuth,userAuth} = require("./middleWares/auth");
+
+//middleware is generally use to "use" request, whenever we are using post, get and more request.
+//Handle Auth Middlewear for only Get requests GET, POST
+
+app.get("/getUserData",(req,res)=>{
+    try{
+        throw new Error("there is an error");
+        res.send("All data sent");
+    }catch(err){
+       res.status(500).send("Some Error contact support team");
+    } 
+});
+
+app.use("/",(err, req, res, next)=>{
+    if(err){
+        // Log your error
+        res.status(500).send(" something went wrong");
+    }
+});// if you will add error on first one and next should be add in last param
+
+app.listen(3000,()=>{
+    console.log("Server is successfully listening on port 3000"); 
+});
+
+
+
+
+
+
+
+
+
 
 //GET  /User => It check all the app.xxx("matching route") function
 // app.use("/",(req,res)=>{
 //     // res.send("Handeling/ route");
 //     next();
 // });
-
 // app.use('/route',rH,[rH2,rH3],rH4); //route in array nothing break over here or do not impact over here
 // app.use("/user",
 //     (req,res,next)=>{
@@ -30,33 +61,6 @@ const app = express();
 //     console.log("Handeling the route user");
 //     next();
 // });
-
-
-app.get("/admin/getAllData",(req,res)=>{
-    //Logic of fetching all data
-    res.send("All data sent");
-});
-
-app.get("/admin/deleteUser",(req,res)=>{
-    //Logic to delete all User
-    res.send("Deleted a user");
-});
-
-app.listen(3000,()=>{
-    console.log("Server is successfully listening on port 3000"); 
-});
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // //This will only handle GET call to /user
